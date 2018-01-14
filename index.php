@@ -27,6 +27,6 @@
 		    
 		for ($i = 1; $i < $obj -> RowCount(); $i++)
             {
-               ?><a href="index.php?strona=<?php echo $i ?>"><?php echo $i ?></a> <?php
+               ?><a href="index.php?strona=<?php echo $i ?>"><?php echo $i ?></a><?php
             }         
 ?>
