@@ -1,6 +1,10 @@
 <?php
 	
 
+	$config = require_once "config.php";
+			  require_once "class.php";
+
+
 	if(!isset($_GET['strona']) || isset($_GET['strona']) === 0 || isset($_GET['strona']) === 1)
 	{
 		$strona = 0;
@@ -12,12 +16,8 @@
 		$strona = ($strona * 3) - 3;
 	}
 
-		$config = require_once "config.php";
-			  	  require_once "class.php";
-
-		$obj = new Pagination($config); 
+	$obj = new Pagination($config); 
 		
-
 		foreach ($obj -> Pag($strona) as $user) 
 		    {
 		       echo "{$user['id']}" . " " . "{$user['email']}<br>";                 
