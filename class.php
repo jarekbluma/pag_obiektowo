@@ -24,7 +24,7 @@ class Pagination
 			$row = $this -> pdo -> query("SELECT * FROM users");
 			$count = $row -> rowCount();
 			$div = ($count/$limit_two) + 1;
-	        $div = ceil($div);
+	        $div = ceil($div); 
 
 			return $div;
 		}

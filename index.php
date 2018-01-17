@@ -1,5 +1,5 @@
 <?php
-	
+	session_start();
 
 	$config = require_once "config.php";
 			  require_once "class.php";
