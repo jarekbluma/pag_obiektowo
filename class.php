@@ -21,7 +21,7 @@ class Pagination
 
 	public function RowCount($limit_two)
 		{
-			$row = $this -> pdo -> query("SELECT * FROM users");
+			$row = $this -> pdo -> query("SELECT * FROM paginacja");
 			$count = $row -> rowCount();
 			$div = ($count/$limit_two) + 1;
 	        $div = ceil($div); 
@@ -33,7 +33,7 @@ class Pagination
 		{
 			$limit_one = intval($strona);
 			$limit_two = intval($limit_two);
-			$usersQuery = $this -> pdo -> query("SELECT * FROM users LIMIT $limit_one,$limit_two");
+			$usersQuery = $this -> pdo -> query("SELECT * FROM paginacja LIMIT $limit_one,$limit_two");
 	        $users = $usersQuery -> fetchAll();
 
 	        return $users;

@@ -10,7 +10,7 @@
 		
 		foreach ($obj -> Pag($strona,$limit_two) as $user) 
 		    {
-		       echo "{$user['id']}" . " " . "{$user['email']}<br>";                 
+		       echo "{$user['id']}" . " " . "{$user['login']}<br>";                 
 		    }  
 
 		echo "<br>";
@@ -24,6 +24,7 @@
 		<br><br>
 		<form action="" method="POST">
 	  		    <select name="form">
+	  		    	<option value="1">1</option>
 					<option value="4">4</option>
 					<option value="6">6</option>
 					<option value="8">8</option>
