@@ -4,10 +4,9 @@
 	$config = require_once "config.php";
 			  require_once "class.php";
 			  require_once "isset.php";
-
+    
 	$obj = new Pagination($config); 
-	
-		
+			
 		foreach ($obj -> Pag($strona,$limit_two) as $user) 
 		    {
 		       echo "{$user['id']}" . " " . "{$user['login']}<br>";                 
