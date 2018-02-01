@@ -4,12 +4,13 @@
 	$config = require_once "config.php";
 			  require_once "class.php";
 			  require_once "isset.php";
+			  
     
 	$obj = new Pagination($config); 
 			
 		foreach ($obj -> Pag($strona,$limit_two) as $user) 
 		    {
-		       echo "{$user['id']}" . " " . "{$user['login']}<br>";                 
+		       echo "{$user['id']}" . " " . "{$user['login']} " . " " . "<br>{$user['email']}<br><br>";                 
 		    }  
 
 		echo "<br>";
@@ -30,6 +31,12 @@
 				</select>
 				    <input type="submit" value="Wyników na stronie"/>	
 		</form>
-
+		
+		<h2>Wyślij email</h2>
+		<form action="phpmailer.php" method="POST">
+			  <textarea name="message" rows="10" cols="30"></textarea>
+			  <br>
+			  <input type="submit">
+		</form>
 
 
