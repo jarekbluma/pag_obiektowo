@@ -3,13 +3,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 				require 'vendor/autoload.php';
 				require 'phpmailerAuth.php';
 
-if(isset($_POST['message']))
+class Mailer
+{
+	public function __construct($message)
 	{
-				$text = $_POST['message'];
+				require 'phpmailerAuth.php';
 
 				$mail = new PHPMailer;
 
 				$mail->isSMTP();
+				
 				$mail->SMTPOptions = array(
 				    'ssl' => array(
 				        'verify_peer' => false,
@@ -41,7 +44,7 @@ if(isset($_POST['message']))
 				$mail->Subject = 'PHPMailer GMail SMTP test';
 
 
-				$mail->msgHTML($text);
+				$mail->msgHTML($message);
 
 
 				$mail->AltBody = 'This is a plain-text message body';
@@ -58,9 +61,8 @@ if(isset($_POST['message']))
 				    
 				}
 	}
-	else
-	{
-		echo "wyślij email";
-	}	
+}
+
+
 
 				
